@@ -14,6 +14,8 @@
 		94BC30E82462DD8F00CBC6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30E62462DD8F00CBC6A9 /* Main.storyboard */; };
 		94BC30EA2462DD9000CBC6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30E92462DD9000CBC6A9 /* Assets.xcassets */; };
 		94BC30ED2462DD9000CBC6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30EB2462DD9000CBC6A9 /* LaunchScreen.storyboard */; };
+		94D95F382462FE9800CD3043 /* Pens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D95F372462FE9800CD3043 /* Pens.swift */; };
+		94D95F3A246302D000CD3043 /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D95F39246302D000CD3043 /* BeaconViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		94BC30E92462DD9000CBC6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94BC30EC2462DD9000CBC6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94BC30EE2462DD9000CBC6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D95F372462FE9800CD3043 /* Pens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pens.swift; sourceTree = "<group>"; };
+		94D95F39246302D000CD3043 /* BeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */,
+				94D95F372462FE9800CD3043 /* Pens.swift */,
 				94BC30E02462DD8F00CBC6A9 /* SceneDelegate.swift */,
 				94BC30E22462DD8F00CBC6A9 /* FirstViewController.swift */,
 				94BC30E42462DD8F00CBC6A9 /* SecondViewController.swift */,
 				94BC30E62462DD8F00CBC6A9 /* Main.storyboard */,
+				94D95F39246302D000CD3043 /* BeaconViewController.swift */,
 				94BC30E92462DD9000CBC6A9 /* Assets.xcassets */,
 				94BC30EB2462DD9000CBC6A9 /* LaunchScreen.storyboard */,
 				94BC30EE2462DD9000CBC6A9 /* Info.plist */,
@@ -144,6 +150,8 @@
 				94BC30E52462DD8F00CBC6A9 /* SecondViewController.swift in Sources */,
 				94BC30E32462DD8F00CBC6A9 /* FirstViewController.swift in Sources */,
 				94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */,
+				94D95F382462FE9800CD3043 /* Pens.swift in Sources */,
+				94D95F3A246302D000CD3043 /* BeaconViewController.swift in Sources */,
 				94BC30E12462DD8F00CBC6A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
