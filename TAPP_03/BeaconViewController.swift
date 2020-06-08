@@ -11,7 +11,7 @@ class BeaconViewController: UIViewController {
 
       var locationManager = CLLocationManager()
                locationManager.delegate = self as? CLLocationManagerDelegate
-               locationManager.requestAlwaysAuthorization()
+               locationManager.requestWhenInUseAuthorization()
            
        func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
            if status == .authorizedAlways {
@@ -25,7 +25,7 @@ class BeaconViewController: UIViewController {
        }
            func startScanning() {
                let uuid = UUID(uuidString: "UUID på iBeacon")!
-               let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 123, minor: 456, identifier: "MyBeacon") //Her skal der indsættes data for hvilke major, minor og identifiter egenskaber til vores beacon
+               let beaconRegion = CLBeaconRegion(beaconIdentityConstraint: <#T##CLBeaconIdentityConstraint#>, identifier: <#T##String#>) //Her skal der indsættes data for hvilke major, minor og identifiter egenskaber til vores beacon
 
                locationManager.startMonitoring(for: beaconRegion)
                locationManager.startRangingBeacons(in: beaconRegion)
@@ -58,4 +58,5 @@ class BeaconViewController: UIViewController {
            }
     }
 }
+
 */

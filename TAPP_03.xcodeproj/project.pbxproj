@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4539237AC5BFD469031D6C44 /* Pods_TAPP_03.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */; };
 		94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */; };
 		94BC30E12462DD8F00CBC6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC30E02462DD8F00CBC6A9 /* SceneDelegate.swift */; };
 		94BC30E32462DD8F00CBC6A9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC30E22462DD8F00CBC6A9 /* FirstViewController.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TAPP_03.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.release.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.release.xcconfig"; sourceTree = "<group>"; };
+		6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.debug.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.debug.xcconfig"; sourceTree = "<group>"; };
 		94BC30DB2462DD8F00CBC6A9 /* TAPP_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAPP_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BC30E02462DD8F00CBC6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4539237AC5BFD469031D6C44 /* Pods_TAPP_03.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		382D2FCAB390616E7CAB7962 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */,
+				668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		94BC30D22462DD8F00CBC6A9 = {
 			isa = PBXGroup;
 			children = (
 				94BC30DD2462DD8F00CBC6A9 /* TAPP_03 */,
 				94BC30DC2462DD8F00CBC6A9 /* Products */,
+				382D2FCAB390616E7CAB7962 /* Pods */,
+				DA82D32C90EAF3B486BD22E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +93,14 @@
 			path = TAPP_03;
 			sourceTree = "<group>";
 		};
+		DA82D32C90EAF3B486BD22E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BC30F12462DD9000CBC6A9 /* Build configuration list for PBXNativeTarget "TAPP_03" */;
 			buildPhases = (
+				6AEBA3A60A1C6E6E27AC02B2 /* [CP] Check Pods Manifest.lock */,
 				94BC30D72462DD8F00CBC6A9 /* Sources */,
 				94BC30D82462DD8F00CBC6A9 /* Frameworks */,
 				94BC30D92462DD8F00CBC6A9 /* Resources */,
+				1335C1BDBDC60D4F25F174A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1335C1BDBDC60D4F25F174A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AEBA3A60A1C6E6E27AC02B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TAPP_03-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94BC30D72462DD8F00CBC6A9 /* Sources */ = {
@@ -294,6 +363,7 @@
 		};
 		94BC30F22462DD9000CBC6A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +382,7 @@
 		};
 		94BC30F32462DD9000CBC6A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
