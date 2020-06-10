@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,7 +54,6 @@
 				6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */,
 				668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
