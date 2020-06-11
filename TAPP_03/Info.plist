@@ -16,18 +16,21 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>prefs</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Require Bluetooth to detect beacons</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Using estimote beacons</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Require your location</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Require your location</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -82,5 +85,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth required</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth peri</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Local</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Loca when in use</string>
 </dict>
 </plist>

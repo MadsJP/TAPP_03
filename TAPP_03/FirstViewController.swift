@@ -13,59 +13,70 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var Afstand: UILabel!
     
-    var proximityObserver: ProximityObserver!
+    var proximityObserver: ProximityObserver?
     
     var proximityZones = [ProximityZone]()
     
     let estimoteCloudcredentials = CloudCredentials (appID: "tapp-03-o2f", appToken:  "8559dc75a4d97b0159356c6f259d5e7e")
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        proximityObserver = ProximityObserver(credentials: estimoteCloudcredentials,  onError: {error in print("Proximity error observer")})
+      
+        
+        proximityObserver = ProximityObserver(credentials: estimoteCloudcredentials, onError: {error in
+            print("Proximity error observer")
+        })
         
         defineProximityZones()
         
         if let proximityObserver = proximityObserver {
+            print("proximity observer not nil: \(proximityObserver)")
             proximityObserver.startObserving(proximityZones)
         }
-        
+        else {
+            print("proximity observer nil")
         }
+        
+    }
     func defineProximityZones() {
         
-        let zoneTagV = "V section"
-       // let zoneTagX = "X section"
-        let itemKey = "TAPP"
+        let zoneTagV = "Pen"
+        // let zoneTagX = "X section"
+        let itemKey = "epi"
         
         let zoneV = ProximityZone(tag: zoneTagV, range: ProximityRange(desiredMeanTriggerDistance: 0.5) ?? .near)
         
         zoneV.onEnter = {zoneContext in
+            print("On Enter")
             self.logAction(message: "Entered \(zoneContext.tag)")
         }
         
         zoneV.onExit = {zoneContext in
-        self.logAction(message: "Exited \(zoneContext.tag)")
+            print("On Exit")
+            self.logAction(message: "Exited \(zoneContext.tag)")
         }
         zoneV.onContextChange = { contexts in
+            print("Context")
             let itemsChanged = contexts.map { contexts in
                 contexts.attachments[itemKey]
             }
             let items = itemsChanged.compactMap {$0}
             
             if !items.isEmpty {
-                self.logAction(message: "In \(zoneTagV) by \(items)")
-                }
+                self.logAction(message: "In \(zoneV) by \(items)")
             }
+        }
         
         proximityZones.append(zoneV)
-      
-        }
-    
         
+    }
+    
+    
     func logAction(message: String){
         print(message)
-    Afstand.text = message
+        Afstand.text = message
     }
     
 }

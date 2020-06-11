@@ -8,4 +8,7 @@ target 'TAPP_03' do
   # Pods for TAPP_03
 
     pod 'EstimoteProximitySDK'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+    
 end
