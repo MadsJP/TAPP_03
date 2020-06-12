@@ -31,6 +31,7 @@ class IndstillingerViewController: UIViewController {
         {
             if let  url = URL.init(string: UIApplication.openSettingsURLString){
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                print("Sender is on")
             
         }
         else
@@ -38,6 +39,7 @@ class IndstillingerViewController: UIViewController {
             let alert = UIAlertController(title: "Bluetooth activation", message: "Please turn on Bluetooth", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true)
+            print("Sender is off")
         }
             }
         }

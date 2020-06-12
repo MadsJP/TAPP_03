@@ -10,5 +10,7 @@ target 'TAPP_03' do
     pod 'EstimoteProximitySDK'
     pod 'Firebase/Core'
     pod 'Firebase/Database'
+	pod 'FirebaseUI/Email'
+ 
     
 end

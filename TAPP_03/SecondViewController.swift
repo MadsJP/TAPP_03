@@ -12,7 +12,7 @@ import MapKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+    //123456
     override func viewDidLoad() {
         super.viewDidLoad()
        

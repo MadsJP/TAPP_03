@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4539237AC5BFD469031D6C44 /* Pods_TAPP_03.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */; };
+		94105EA62493914200F8788A /* FirebaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94105EA52493914200F8788A /* FirebaseViewController.swift */; };
 		9483888A2490F170002212E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 948388892490F170002212E6 /* GoogleService-Info.plist */; };
 		9483888C24913B16002212E6 /* IndstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483888B24913B16002212E6 /* IndstillingerViewController.swift */; };
 		94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TAPP_03.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.release.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.release.xcconfig"; sourceTree = "<group>"; };
 		6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.debug.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.debug.xcconfig"; sourceTree = "<group>"; };
+		94105EA52493914200F8788A /* FirebaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewController.swift; sourceTree = "<group>"; };
 		948388892490F170002212E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9483888B24913B16002212E6 /* IndstillingerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndstillingerViewController.swift; sourceTree = "<group>"; };
 		94BC30DB2462DD8F00CBC6A9 /* TAPP_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAPP_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				94D95F372462FE9800CD3043 /* Pens.swift */,
 				94BC30E02462DD8F00CBC6A9 /* SceneDelegate.swift */,
 				94BC30E22462DD8F00CBC6A9 /* FirstViewController.swift */,
+				94105EA52493914200F8788A /* FirebaseViewController.swift */,
 				94BC30E42462DD8F00CBC6A9 /* SecondViewController.swift */,
 				94BC30E62462DD8F00CBC6A9 /* Main.storyboard */,
 				9483888B24913B16002212E6 /* IndstillingerViewController.swift */,
@@ -118,6 +121,7 @@
 				94BC30D82462DD8F00CBC6A9 /* Frameworks */,
 				94BC30D92462DD8F00CBC6A9 /* Resources */,
 				1335C1BDBDC60D4F25F174A3 /* [CP] Embed Pods Frameworks */,
+				E0B820D90816ECF799C4594A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,6 +219,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E0B820D90816ECF799C4594A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TAPP_03/Pods-TAPP_03-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -229,6 +250,7 @@
 				94D95F3A246302D000CD3043 /* BeaconViewController.swift in Sources */,
 				94BC30E12462DD8F00CBC6A9 /* SceneDelegate.swift in Sources */,
 				9483888C24913B16002212E6 /* IndstillingerViewController.swift in Sources */,
+				94105EA62493914200F8788A /* FirebaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

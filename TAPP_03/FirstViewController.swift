@@ -11,9 +11,11 @@ import EstimoteProximitySDK
 
 class FirstViewController: UIViewController {
     
-    @IBOutlet weak var Afstand: UILabel!
     
-    var proximityObserver: ProximityObserver?
+  
+    @IBOutlet weak var beaconLabel: UILabel!
+    
+    var proximityObserver: ProximityObserver!
     
     var proximityZones = [ProximityZone]()
     
@@ -23,10 +25,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
-        
         proximityObserver = ProximityObserver(credentials: estimoteCloudcredentials, onError: {error in
-            print("Proximity error observer")
+            print("Proximity error: \(error)")
         })
         
         defineProximityZones()
@@ -45,9 +45,9 @@ class FirstViewController: UIViewController {
         let zoneTagV = "Pen"
         // let zoneTagX = "X section"
         let itemKey = "epi"
-        
-        let zoneV = ProximityZone(tag: zoneTagV, range: ProximityRange(desiredMeanTriggerDistance: 0.5) ?? .near)
-        
+
+        let zoneV = ProximityZone(tag: zoneTagV, range: ProximityRange(desiredMeanTriggerDistance: 1.0) ?? .near)
+       //Kan sagtens komme hertil
         zoneV.onEnter = {zoneContext in
             print("On Enter")
             self.logAction(message: "Entered \(zoneContext.tag)")
@@ -65,18 +65,18 @@ class FirstViewController: UIViewController {
             let items = itemsChanged.compactMap {$0}
             
             if !items.isEmpty {
-                self.logAction(message: "In \(zoneV) by \(items)")
+                self.logAction(message: "Du er tæt på: \(zoneTagV) med \(items)")
             }
         }
-        
+     
         proximityZones.append(zoneV)
-        
     }
     
     
     func logAction(message: String){
         print(message)
-        Afstand.text = message
+        
+        beaconLabel.text = message
     }
     
 }
