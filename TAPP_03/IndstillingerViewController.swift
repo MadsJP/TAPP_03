@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndstillingerViewController: UIViewController {
+class IndstillingerViewController: UITableViewController {
     
     @IBOutlet weak var SwitchBluetooth: UISwitch!
     
