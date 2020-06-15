@@ -66,7 +66,7 @@ extension FirebaseViewController: FUIAuthDelegate {
         
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let firstVC = storyboard.instantiateViewController(withIdentifier: "firstVC")
+        let firstVC = storyboard.instantiateViewController(withIdentifier: "tabbar")
         self.present(firstVC, animated: true, completion: nil)
     
     }
