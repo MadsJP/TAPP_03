@@ -1,40 +1,16 @@
 //
 //  TableViewController.swift
-//  TAPP_03
+//  
 //
 //  Created by Mads Janner Pedersen on 16/06/2020.
-//  Copyright © 2020 Mads Janner Pedersen. All rights reserved.
 //
 
 import UIKit
 
 class TableViewController: UITableViewController {
-    
-    @IBOutlet weak var switchEpi: UISwitch!
-    @IBOutlet weak var switchForsk: UISwitch!
-    
-    //Klargøring til at funktionen skal kunne aktivere epiløber tilstanden
-    @IBAction func epiState(_ sender: Any) {
-        if switchEpi.isOn {
-          print("Epi on")
-        } else {
-          print("Epi off")
-        }
-    }
-    
-    //Klargøring til at funktionen skal kunne aktivere forskningens tilstanden
-    @IBAction func forskState(_ sender: Any) {
-        if switchForsk.isOn {
-          print("Forsk on")
-        } else {
-          print("Forsk off")
-        }
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,7 +19,7 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-/*
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -53,6 +29,8 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+ 
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,5 +86,6 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-*/
+
 }
+

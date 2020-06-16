@@ -17,8 +17,9 @@
 		94BC30E82462DD8F00CBC6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30E62462DD8F00CBC6A9 /* Main.storyboard */; };
 		94BC30EA2462DD9000CBC6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30E92462DD9000CBC6A9 /* Assets.xcassets */; };
 		94BC30ED2462DD9000CBC6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BC30EB2462DD9000CBC6A9 /* LaunchScreen.storyboard */; };
-		94C937F3249767960067AC14 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C937F2249767960067AC14 /* TableViewController.swift */; };
+		94C937F52497A27A0067AC14 /* PenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C937F42497A27A0067AC14 /* PenDetailViewController.swift */; };
 		94D95F382462FE9800CD3043 /* Pens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D95F372462FE9800CD3043 /* Pens.swift */; };
+		94FA3AE72498ED4700C1EB74 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA3AE62498ED4700C1EB74 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +37,9 @@
 		94BC30E92462DD9000CBC6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94BC30EC2462DD9000CBC6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94BC30EE2462DD9000CBC6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94C937F2249767960067AC14 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = /Users/madsjanner/Desktop/TAPP_02_mappe/TAPP_03/TAPP_03/TableViewController.swift; sourceTree = "<absolute>"; };
+		94C937F42497A27A0067AC14 /* PenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenDetailViewController.swift; sourceTree = "<group>"; };
 		94D95F372462FE9800CD3043 /* Pens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pens.swift; sourceTree = "<group>"; };
+		94FA3AE62498ED4700C1EB74 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +86,12 @@
 			children = (
 				94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */,
 				94D95F372462FE9800CD3043 /* Pens.swift */,
+				94C937F42497A27A0067AC14 /* PenDetailViewController.swift */,
 				94BC30E02462DD8F00CBC6A9 /* SceneDelegate.swift */,
 				94BC30E22462DD8F00CBC6A9 /* FirstViewController.swift */,
 				94105EA52493914200F8788A /* FirebaseViewController.swift */,
+				94FA3AE62498ED4700C1EB74 /* TableViewController.swift */,
 				94BC30E42462DD8F00CBC6A9 /* SecondViewController.swift */,
-				94C937F2249767960067AC14 /* TableViewController.swift */,
 				94BC30E62462DD8F00CBC6A9 /* Main.storyboard */,
 				94BC30E92462DD9000CBC6A9 /* Assets.xcassets */,
 				94BC30EB2462DD9000CBC6A9 /* LaunchScreen.storyboard */,
@@ -240,11 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C937F3249767960067AC14 /* TableViewController.swift in Sources */,
 				94BC30E52462DD8F00CBC6A9 /* SecondViewController.swift in Sources */,
 				94BC30E32462DD8F00CBC6A9 /* FirstViewController.swift in Sources */,
 				94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */,
+				94FA3AE72498ED4700C1EB74 /* TableViewController.swift in Sources */,
 				94D95F382462FE9800CD3043 /* Pens.swift in Sources */,
+				94C937F52497A27A0067AC14 /* PenDetailViewController.swift in Sources */,
 				94BC30E12462DD8F00CBC6A9 /* SceneDelegate.swift in Sources */,
 				94105EA62493914200F8788A /* FirebaseViewController.swift in Sources */,
 			);
