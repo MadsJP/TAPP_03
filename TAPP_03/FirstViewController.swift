@@ -7,8 +7,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
     
     @IBOutlet weak var beaconLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var batteryLabel: UILabel!
-    @IBOutlet weak var monitorLabel: UILabel!
+   
     
     
     
@@ -159,16 +158,69 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
                // print("temperature = \(scanInfo.temperatureInCelsius)")
                 tempLabel.text = ("Temperatur = \(scanInfo.temperatureInCelsius)")
                // print(scanInfo.batteryLevel)
-               // batteryLabel.text = ("Udløbsdato = \(scanInfo.batteryVoltageInMillivolts)")
-            }
-        }
+                // batteryLabel.text = ("Udløbsdato = \(scanInfo.batteryVoltageInMillivolts)")
+                if Double(truncating: scanInfo.temperatureInCelsius) <= 20.0 {
+                    notifyTempMin()
+                
+                }
+                
+                if Double(truncating: scanInfo.temperatureInCelsius) >= 27.0 {
+                                   notifyTempMax()
+                }
+                }
+        
+               
+            
+    }
 
         func universalScanner(_ universalScanner: EBSUniversalScannerProtocol,
                               didFailToScanWithError error: Error) {
             NSLog("scanner error: \(error)")
         }
     
+    func notifyTempMin() {
+            let content = UNMutableNotificationContent()
+            
+            content.title = "Hej [Bruger] "
+            content.body = "Temperaturen på din Epipen er for kold "
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let reguestIdentifier = "request101"
+            let request = UNNotificationRequest(identifier: reguestIdentifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+            }
+            
+        }
+        
+        func notifyTempMax() {
+               let content = UNMutableNotificationContent()
+               
+               content.title = "Hej [Bruger] "
+               content.body = "Temperaturen på din Epipen er for varm"
+               
+               let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+               let reguestIdentifier = "request101"
+               let request = UNNotificationRequest(identifier: reguestIdentifier, content: content, trigger: trigger)
+               
+               UNUserNotificationCenter.current().add(request) { (error) in
+                   if let error = error {
+                       print(error.localizedDescription)
+                   }
+                   
+               }
+               
+           }
+        
+            
+}
+    
  
         
     
-}
+
+

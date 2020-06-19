@@ -10,30 +10,40 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    let userDefaults = UserDefaults.standard
+    //Oulets
+    @IBOutlet weak var epiLabel: UILabel!
+    @IBOutlet weak var forskLabel: UILabel!
     @IBOutlet weak var switchEpi: UISwitch!
     @IBOutlet weak var switchForsk: UISwitch!
     
+    
+    
     //Klargøring til at funktionen skal kunne aktivere epiløber tilstanden
     @IBAction func epiState(_ sender: Any) {
+        userDefaults.set((sender as AnyObject).isOn, forKey: "epiSwitchValue")
         if switchEpi.isOn {
-          print("Epi on")
+            epiLabel.text = ("Du er tilmeldt epiløber")
         } else {
-          print("Epi off")
+            epiLabel.text = ("Du er frameldt epiløber")
         }
     }
     
     //Klargøring til at funktionen skal kunne aktivere forskningens tilstanden
     @IBAction func forskState(_ sender: Any) {
+      userDefaults.set((sender as AnyObject).isOn, forKey: "forskSwitchValue")
         if switchForsk.isOn {
-          print("Forsk on")
+            forskLabel.text = ("Du er tilmeldt forskning")
         } else {
-          print("Forsk off")
+            forskLabel.text = ("Du er frameldt forskning")
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        switchForsk.isOn = userDefaults.bool(forKey: "forskSwitchValue")
+        switchEpi.isOn = userDefaults.bool(forKey: "epiSwitchValue")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
