@@ -4,7 +4,7 @@
 //
 //  Created by Mads Janner Pedersen on 16/06/2020.
 //  Copyright © 2020 Mads Janner Pedersen. All rights reserved.
-//
+//https://www.hackingwithswift.com/example-code/system/how-to-save-user-settings-using-userdefaults
 
 import UIKit
 

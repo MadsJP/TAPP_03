@@ -7,6 +7,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
     
     @IBOutlet weak var beaconLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    
    
     
     
