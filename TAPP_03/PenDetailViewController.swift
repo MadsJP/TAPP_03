@@ -15,7 +15,7 @@ class PenDetailViewController: UIViewController {
     @IBOutlet weak var valgtPen: UILabel!
     
     //Variable
-    let data = ["Epi Pen","Glucagon Pen","Adrealin Pen","ALKJ Pen"]
+    let data = ["Epi Pen","Glucagon Pen","Adrealin Pen","ALK Pen"]
     let userDefaultsLastRowKey = "pen"
 
     

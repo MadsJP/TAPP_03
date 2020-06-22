@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4539237AC5BFD469031D6C44 /* Pods_TAPP_03.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */; };
+		94012F3624A0C6A3001F7760 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94012F3524A0C6A3001F7760 /* InfoViewController.swift */; };
 		94105EA62493914200F8788A /* FirebaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94105EA52493914200F8788A /* FirebaseViewController.swift */; };
 		9483888A2490F170002212E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 948388892490F170002212E6 /* GoogleService-Info.plist */; };
 		94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC30DE2462DD8F00CBC6A9 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		1B2D5F341976D3AB16B93E81 /* Pods_TAPP_03.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TAPP_03.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		668E0519F1B703A9ACF5E502 /* Pods-TAPP_03.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.release.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.release.xcconfig"; sourceTree = "<group>"; };
 		6DA5F28655FF4587D6C26B7F /* Pods-TAPP_03.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAPP_03.debug.xcconfig"; path = "Target Support Files/Pods-TAPP_03/Pods-TAPP_03.debug.xcconfig"; sourceTree = "<group>"; };
+		94012F3524A0C6A3001F7760 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		94105EA52493914200F8788A /* FirebaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewController.swift; sourceTree = "<group>"; };
 		948388892490F170002212E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94BC30DB2462DD8F00CBC6A9 /* TAPP_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAPP_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				94FA3AE82499269B00C1EB74 /* AlarmViewController.swift */,
 				94C937F42497A27A0067AC14 /* PenDetailViewController.swift */,
 				94BC30E62462DD8F00CBC6A9 /* Main.storyboard */,
+				94012F3524A0C6A3001F7760 /* InfoViewController.swift */,
 				94BC30E92462DD9000CBC6A9 /* Assets.xcassets */,
 				94BC30EB2462DD9000CBC6A9 /* LaunchScreen.storyboard */,
 				948388892490F170002212E6 /* GoogleService-Info.plist */,
@@ -247,6 +250,7 @@
 				94BC30E32462DD8F00CBC6A9 /* FirstViewController.swift in Sources */,
 				94BC30DF2462DD8F00CBC6A9 /* AppDelegate.swift in Sources */,
 				94FA3AE72498ED4700C1EB74 /* TableViewController.swift in Sources */,
+				94012F3624A0C6A3001F7760 /* InfoViewController.swift in Sources */,
 				94FA3AE92499269B00C1EB74 /* AlarmViewController.swift in Sources */,
 				94C937F52497A27A0067AC14 /* PenDetailViewController.swift in Sources */,
 				94BC30E12462DD8F00CBC6A9 /* SceneDelegate.swift in Sources */,

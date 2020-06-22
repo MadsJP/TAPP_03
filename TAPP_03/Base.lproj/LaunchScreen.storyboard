@@ -15,17 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen til TAPP, vent venligst" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn9-hF-rKn" userLabel="Velkommen til TAPP, vent venligst">
-                                <rect key="frame" x="78.5" y="442.5" width="257" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bnO-1k-AvR">
+                                <rect key="frame" x="30" y="72.5" width="354" height="757"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="light"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gn9-hF-rKn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="U18-DY-JZl"/>
-                            <constraint firstItem="gn9-hF-rKn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yr1-yP-vdr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bnO-1k-AvR" secondAttribute="bottom" constant="30" id="IEO-u9-j78"/>
+                            <constraint firstItem="bnO-1k-AvR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="N2E-OC-tQb"/>
+                            <constraint firstItem="bnO-1k-AvR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="b7l-ba-tMs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bnO-1k-AvR" secondAttribute="trailing" constant="30" id="bWt-dE-hTB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,4 +35,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sunrise.fill" catalog="system" width="128" height="97"/>
+    </resources>
 </document>

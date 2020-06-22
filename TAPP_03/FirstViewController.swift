@@ -7,7 +7,15 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
     
     @IBOutlet weak var beaconLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var indtastDist: UITextField!
     
+    
+    /*
+    @IBAction func valueSent(_ sender: Any) {
+        let text: String = indtastDist.text ?? "9.0"
+        let text1 = Double(text) ?? 9.0
+    }
+    */
    
     
     
@@ -62,14 +70,18 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
     }
     
     
+    
+    
     func defineProximityZones() {
        // let distance = ""
         let zoneTagV = "Pen"
         let itemKey = "epi"
+  
+    
         
         let innerZone = ProximityZone(
             tag: zoneTagV,
-            range: ProximityRange(desiredMeanTriggerDistance: 3.0) ?? .near)
+            range: ProximityRange(desiredMeanTriggerDistance: 9.0 ) ?? .far)
 
         innerZone.onEnter = {zoneContext in
         print("Hot!")
@@ -81,8 +93,9 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
         self.logAction(message: "Exited \(zoneContext.tag)") }
         
         
+        
  
-        let outerZone = ProximityZone(
+      /*  let outerZone = ProximityZone(
             tag: zoneTagV,
             range: ProximityRange(desiredMeanTriggerDistance: 9.0) ?? .far)
         
@@ -93,7 +106,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
         outerZone.onExit = {zoneContext in
         print("Freezing")
         self.logAction(message: "Exited \(zoneContext.tag)") }
-        
+        */
         innerZone.onContextChange = { contexts in
                     print("Context")
                     let itemsChanged = contexts.map { contexts in
@@ -106,7 +119,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
                  
                         self.logAction(message: "Du er tæt på: \(zoneTagV) med \(items)")
                 
-                
+            
                 
                     }
                 }
@@ -114,7 +127,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
                 proximityZones.append(innerZone)
          
             }
-            
+    
             
             func logAction(message: String){
                 print(message)
@@ -219,9 +232,3 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
         
             
 }
-    
- 
-        
-    
-
-

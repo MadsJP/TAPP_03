@@ -166,6 +166,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indtast distance i m" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzt-dR-jH2">
+                                <rect key="frame" x="30" y="598" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="valueSent:" destination="dWC-Ws-JVt" eventType="editingDidEnd" id="rRN-8U-Lqd"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -177,6 +185,8 @@
                             <constraint firstItem="k3m-eF-NNP" firstAttribute="top" secondItem="KUL-hF-szW" secondAttribute="bottom" constant="20" id="ICv-au-SjK"/>
                             <constraint firstItem="XjH-Dc-Dgo" firstAttribute="trailing" secondItem="gG5-rS-xXV" secondAttribute="trailing" constant="30" id="KYc-r3-KDc"/>
                             <constraint firstItem="lu0-OE-bKW" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="LQi-84-tSc"/>
+                            <constraint firstItem="Xzt-dR-jH2" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="Lw1-hT-h1I"/>
+                            <constraint firstItem="XjH-Dc-Dgo" firstAttribute="trailing" secondItem="Xzt-dR-jH2" secondAttribute="trailing" constant="30" id="P7e-a6-JkX"/>
                             <constraint firstItem="KUL-hF-szW" firstAttribute="top" secondItem="XjH-Dc-Dgo" secondAttribute="top" constant="10" id="fYd-e2-b4W"/>
                             <constraint firstItem="k3m-eF-NNP" firstAttribute="top" secondItem="XjH-Dc-Dgo" secondAttribute="top" constant="50" id="gmb-8S-Hm9"/>
                             <constraint firstItem="KUL-hF-szW" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="hlE-CB-xgc"/>
@@ -184,6 +194,7 @@
                             <constraint firstItem="6sH-wJ-e3b" firstAttribute="top" secondItem="gG5-rS-xXV" secondAttribute="bottom" constant="30" id="iXv-wK-o5k"/>
                             <constraint firstItem="gG5-rS-xXV" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="nRl-yo-kVm"/>
                             <constraint firstItem="gG5-rS-xXV" firstAttribute="top" secondItem="lu0-OE-bKW" secondAttribute="bottom" constant="30" id="qFi-Vk-is1"/>
+                            <constraint firstItem="lu0-OE-bKW" firstAttribute="top" secondItem="Xzt-dR-jH2" secondAttribute="bottom" constant="30" id="ua1-H4-vKZ"/>
                             <constraint firstItem="XjH-Dc-Dgo" firstAttribute="trailing" secondItem="KUL-hF-szW" secondAttribute="trailing" constant="30" id="w6o-Gn-Abi"/>
                             <constraint firstItem="amp-Er-XaM" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="wMO-S9-QLY"/>
                             <constraint firstItem="6sH-wJ-e3b" firstAttribute="leading" secondItem="XjH-Dc-Dgo" secondAttribute="leading" constant="30" id="xOj-P2-m0x"/>
@@ -195,7 +206,7 @@
                     <navigationItem key="navigationItem" id="ouW-Vn-ddM"/>
                     <connections>
                         <outlet property="beaconLabel" destination="6sH-wJ-e3b" id="ynJ-Hb-Eg9"/>
-                        <outlet property="penLabel" destination="lu0-OE-bKW" id="jgH-Hr-Qhi"/>
+                        <outlet property="indtastDist" destination="Xzt-dR-jH2" id="Osy-1a-YLy"/>
                         <outlet property="tempLabel" destination="gG5-rS-xXV" id="gqg-Py-26W"/>
                     </connections>
                 </viewController>
@@ -206,7 +217,7 @@
         <!--Information-->
         <scene sceneID="YBR-xf-Dgi">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="b2e-K1-7NG" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="b2e-K1-7NG" customClass="InfoViewController" customModule="TAPP_03" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MKg-sn-h92">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,27 +229,44 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-D5-XJn">
-                                <rect key="frame" x="30" y="172.5" width="354" height="159"/>
-                                <string key="text">Hvordan udvikler et anfald sig?
-Anfaldene udvikler sig som regel hurtigt. Det vil sige, at det som regel kun tager få minutter, fra man har været i kontakt med det udløsende stof, til reaktionen kommer. Men tiden kan variere fra sekunder og helt op til en time.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vis du vil læse mere om anafylaksi, tryk venligst på knappen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glw-Y5-3cm">
+                                <rect key="frame" x="30" y="172.5" width="354" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOZ-7C-VZT">
+                                <rect key="frame" x="30" y="263.5" width="354" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Szi-05-1mK"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="safari" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
+                                </state>
+                                <connections>
+                                    <action selector="anafylPressed:" destination="b2e-K1-7NG" eventType="touchUpInside" id="bhN-Kr-jTH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NV9-D5-XJn" secondAttribute="trailing" constant="30" id="2fA-aL-wmX"/>
-                            <constraint firstItem="NV9-D5-XJn" firstAttribute="top" secondItem="9xm-1f-onw" secondAttribute="bottom" constant="30" id="Fad-SU-T5s"/>
-                            <constraint firstItem="NV9-D5-XJn" firstAttribute="leading" secondItem="BXa-oZ-oBT" secondAttribute="leading" constant="30" id="QBU-cm-2Je"/>
+                            <constraint firstItem="YOZ-7C-VZT" firstAttribute="top" secondItem="glw-Y5-3cm" secondAttribute="bottom" constant="50" id="6gn-pb-ANA"/>
+                            <constraint firstItem="BXa-oZ-oBT" firstAttribute="trailing" secondItem="YOZ-7C-VZT" secondAttribute="trailing" constant="30" id="GA4-eu-rmd"/>
+                            <constraint firstItem="YOZ-7C-VZT" firstAttribute="leading" secondItem="BXa-oZ-oBT" secondAttribute="leading" constant="30" id="W5Z-Wa-cqx"/>
+                            <constraint firstItem="BXa-oZ-oBT" firstAttribute="trailing" secondItem="glw-Y5-3cm" secondAttribute="trailing" constant="30" id="fdu-of-tAM"/>
+                            <constraint firstItem="glw-Y5-3cm" firstAttribute="leading" secondItem="BXa-oZ-oBT" secondAttribute="leading" constant="30" id="fvX-m3-iyb"/>
                             <constraint firstItem="9xm-1f-onw" firstAttribute="leading" secondItem="BXa-oZ-oBT" secondAttribute="leading" constant="30" id="hsf-xz-a5x"/>
+                            <constraint firstItem="glw-Y5-3cm" firstAttribute="top" secondItem="9xm-1f-onw" secondAttribute="bottom" constant="30" id="oGs-OE-DxR"/>
                             <constraint firstItem="BXa-oZ-oBT" firstAttribute="trailing" secondItem="9xm-1f-onw" secondAttribute="trailing" constant="30" id="sAR-k8-WZH"/>
                             <constraint firstItem="9xm-1f-onw" firstAttribute="top" secondItem="BXa-oZ-oBT" secondAttribute="top" constant="30" id="ugb-Oy-LA2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BXa-oZ-oBT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Information" image="info.circle" catalog="system" id="FGU-Xu-0BV"/>
+                    <connections>
+                        <outlet property="anafylKnap" destination="YOZ-7C-VZT" id="Gvj-0Q-mxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycx-Hc-FBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,34 +280,49 @@ Anfaldene udvikler sig som regel hurtigt. Det vil sige, at det som regel kun tag
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si7-pl-aGj">
-                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen til TAPP " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si7-pl-aGj">
+                                <rect key="frame" x="30" y="94" width="354" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0Wc-Kc-aGp"/>
+                                    <constraint firstAttribute="height" constant="50" id="ndd-B0-zmR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4O-e6-Kp2">
-                                <rect key="frame" x="30" y="337" width="354" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4O-e6-Kp2">
+                                <rect key="frame" x="30" y="637" width="354" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="fD3-9k-WZL"/>
                                 </constraints>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Tryk her for login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="LLJ-eE-kzT" eventType="touchUpInside" id="OMJ-FH-wv0"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="person.crop.circle.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-rK-zMv">
+                                <rect key="frame" x="30" y="256.5" width="354" height="129"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="VDG-23-wdA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="bottom" secondItem="O4O-e6-Kp2" secondAttribute="bottom" constant="450" id="Caj-ch-eTK"/>
-                            <constraint firstItem="O4O-e6-Kp2" firstAttribute="leading" secondItem="ScR-VD-5IZ" secondAttribute="leading" constant="30" id="H0T-mq-0t5"/>
-                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="trailing" secondItem="O4O-e6-Kp2" secondAttribute="trailing" constant="30" id="hXg-sg-fHy"/>
-                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="trailing" secondItem="Si7-pl-aGj" secondAttribute="trailing" constant="30" id="o6v-FO-UEO"/>
-                            <constraint firstItem="Si7-pl-aGj" firstAttribute="top" secondItem="ScR-VD-5IZ" secondAttribute="top" constant="30" id="pKw-RH-ydO"/>
-                            <constraint firstItem="Si7-pl-aGj" firstAttribute="leading" secondItem="ScR-VD-5IZ" secondAttribute="leading" constant="30" id="yzY-ff-bBt"/>
+                            <constraint firstItem="ua2-rK-zMv" firstAttribute="top" secondItem="Si7-pl-aGj" secondAttribute="bottom" constant="50" id="4jc-HH-T3p"/>
+                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="bottom" secondItem="O4O-e6-Kp2" secondAttribute="bottom" constant="150" id="FfQ-9w-Imy"/>
+                            <constraint firstItem="ua2-rK-zMv" firstAttribute="leading" secondItem="ScR-VD-5IZ" secondAttribute="leading" constant="30" id="Gss-xZ-H3a"/>
+                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="trailing" secondItem="Si7-pl-aGj" secondAttribute="trailing" constant="30" id="HyD-Sn-eMt"/>
+                            <constraint firstItem="Si7-pl-aGj" firstAttribute="leading" secondItem="ScR-VD-5IZ" secondAttribute="leading" constant="30" id="JVM-ab-ccn"/>
+                            <constraint firstItem="O4O-e6-Kp2" firstAttribute="leading" secondItem="ScR-VD-5IZ" secondAttribute="leading" constant="30" id="LwU-PH-GN1"/>
+                            <constraint firstItem="Si7-pl-aGj" firstAttribute="top" secondItem="ScR-VD-5IZ" secondAttribute="top" constant="50" id="TxW-PA-eQP"/>
+                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="trailing" secondItem="ua2-rK-zMv" secondAttribute="trailing" constant="30" id="Xb9-EI-VqH"/>
+                            <constraint firstItem="ScR-VD-5IZ" firstAttribute="trailing" secondItem="O4O-e6-Kp2" secondAttribute="trailing" constant="30" id="dAI-OL-uwI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ScR-VD-5IZ"/>
                     </view>
@@ -333,7 +376,7 @@ Anfaldene udvikler sig som regel hurtigt. Det vil sige, at det som regel kun tag
                                     <constraint firstAttribute="height" constant="165" id="ulv-oJ-BMN"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aja-eb-Twp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Din pen kommer her" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aja-eb-Twp">
                                 <rect key="frame" x="30" y="438" width="354" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WtG-Mp-SRc"/>
@@ -587,8 +630,10 @@ Anfaldene udvikler sig som regel hurtigt. Det vil sige, at det som regel kun tag
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="101"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="safari" catalog="system" width="128" height="121"/>
         <image name="tempGraph" width="485" height="505"/>
     </resources>
 </document>
