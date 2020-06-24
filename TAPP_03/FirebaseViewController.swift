@@ -84,7 +84,10 @@ extension FirebaseViewController: FUIAuthDelegate {
         // Hvis der ikke er nogle fejl
         
         // Hvis vi vil have fat i brugerens uid, til at tjekke i databasen om informationer om brugeren benyttes:
-        //authDataResult?.user.uid
+        print(authDataResult?.user.uid ?? "authDataResult nil")
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.userUID = authDataResult?.user.uid as NSString?
         
         UserDefaults.standard.set(true, forKey: loggedInKey)
         

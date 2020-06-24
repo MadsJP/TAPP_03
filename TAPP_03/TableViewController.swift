@@ -16,6 +16,7 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var forskLabel: UILabel!
     @IBOutlet weak var switchEpi: UISwitch!
     @IBOutlet weak var switchForsk: UISwitch!
+    @IBOutlet weak var logOut: UIButton!
     
     
     
@@ -39,6 +40,9 @@ class TableViewController: UITableViewController {
         }
     }
     
+    @IBAction func logOutPressed(_ sender: Any) {
+        exit(0) //Ikke optimalt, men virker for nu. Apple siger nej
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

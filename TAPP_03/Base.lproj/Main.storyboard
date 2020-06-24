@@ -293,7 +293,7 @@
         <!--Firebase View Controller-->
         <scene sceneID="d2m-Yb-vDb">
             <objects>
-                <viewController id="LLJ-eE-kzT" customClass="FirebaseViewController" customModule="TAPP_03" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="LLJ-eE-kzT" customClass="FirebaseViewController" customModule="TAPP_03" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KBX-2B-p4n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,6 +603,47 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Log ud" footerTitle=" " id="1f6-Vu-Bb0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nbJ-Qt-m7f">
+                                        <rect key="frame" x="0.0" y="357.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nbJ-Qt-m7f" id="lIX-P4-lQn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log ud her:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-My-jGS">
+                                                    <rect key="frame" x="25" y="16" width="87" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="36w-ku-vrX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzB-R6-tPb">
+                                                    <rect key="frame" x="344" y="5" width="40" height="39"/>
+                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="arrowshape.turn.up.right.circle.fill" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="34"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="logOutPressed:" destination="ogE-N2-bWP" eventType="touchUpInside" id="o1Y-Wz-8FE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FzB-R6-tPb" secondAttribute="trailing" constant="30" id="4nT-4r-OVw"/>
+                                                <constraint firstAttribute="bottom" secondItem="FzB-R6-tPb" secondAttribute="bottom" constant="5" id="BVY-nT-PHb"/>
+                                                <constraint firstItem="Iaa-My-jGS" firstAttribute="leading" secondItem="lIX-P4-lQn" secondAttribute="leadingMargin" constant="5" id="CGs-tx-sBu"/>
+                                                <constraint firstItem="Iaa-My-jGS" firstAttribute="top" secondItem="lIX-P4-lQn" secondAttribute="topMargin" constant="5" id="a5G-G5-V2k"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Iaa-My-jGS" secondAttribute="bottom" constant="5" id="fw6-eO-l5M"/>
+                                                <constraint firstItem="FzB-R6-tPb" firstAttribute="top" secondItem="lIX-P4-lQn" secondAttribute="top" constant="5" id="pgV-6I-4NW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="ogE-N2-bWP" id="ixo-zM-81T"/>
@@ -613,6 +654,7 @@
                     <connections>
                         <outlet property="epiLabel" destination="uBR-Uj-x93" id="JfJ-H4-nOQ"/>
                         <outlet property="forskLabel" destination="42a-Hd-NJp" id="g6A-fR-780"/>
+                        <outlet property="logOut" destination="FzB-R6-tPb" id="eaR-Mc-koW"/>
                         <outlet property="switchEpi" destination="Ijj-OU-rd6" id="CMj-cV-11t"/>
                         <outlet property="switchForsk" destination="14p-DC-mmP" id="Jy7-N9-eOP"/>
                     </connections>
@@ -642,6 +684,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>

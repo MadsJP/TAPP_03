@@ -28,7 +28,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
                       triggerdistance = distance
                     print("Den er god")
                 }
-                else{
+                else {
                    let alert = UIAlertController(title: "Forkert input", message: "Venligst skriv et tal mellem 1-40", preferredStyle: .alert)
 
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
