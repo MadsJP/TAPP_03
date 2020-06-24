@@ -29,23 +29,22 @@ class PenDetailViewController: UIViewController {
         
     }
      func initialPickerRow() -> Int{
-    //        read from user defaults
+    //        Indlæser fra user defaults
                 let savedRow = UserDefaults.standard.object(forKey: userDefaultsLastRowKey) as? Int
                 if let row = savedRow  {
                     return row
                 } else {
                     return penpickerView.numberOfRows(inComponent: 0)/2
                 }
-                
-    //            return temperaturePicker.numberOfRows(inComponent: 0)/2
             }
         
         func saveSelectedRow(_ row: Int) {
-    //        write to user defaults, som gemmer persistent data selvom appen bliver lukket ned.
+    //       skriver til userdefaults, som gemmer persistent data selvom appen bliver lukket ned.
             let defaults = UserDefaults.standard
             defaults.set(row, forKey: userDefaultsLastRowKey)
             defaults.synchronize()
         }
+    // Viser hvilken pen ud fra hvilken row der er valgt. 
     func displayChosenPen(forRow row: Int) {
         let chosenPen = data[row]
         valgtPen.text = ("Din valgte pen: \(chosenPen)")

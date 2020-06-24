@@ -4,10 +4,11 @@ import UserNotifications
 import EstimoteBluetoothScanning
 //EBSUniversalScannerDelegate
 class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
-    
+    var triggerdistance = 9.0
     @IBOutlet weak var beaconLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var indtastDist: UITextField!
+    @IBOutlet weak var distLabel: UILabel!
     
     
     /*
@@ -19,15 +20,37 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
    
     
     
+    @IBAction func pressedButton(_ sender: UIButton) {
+        
+        if let distanceStr = indtastDist.text {
+            if let distance = Double(distanceStr){
+                if (distance >= 1 && distance <= 40) {
+                      triggerdistance = distance
+                    print("Den er god")
+                }
+                else{
+                   let alert = UIAlertController(title: "Forkert input", message: "Venligst skriv et tal mellem 1-40", preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                    self.present(alert, animated: true)
+                }
+              
+            }
+            distLabel.text? = distanceStr + (" meter")
+        }
+        indtastDist.resignFirstResponder()
+        
+    }
     
     var proximityObserver: ProximityObserver!
     
     var proximityZones = [ProximityZone]()
     
-    let estimoteCloudcredentials = CloudCredentials (appID: "tapp-03-o2f", appToken:  "8559dc75a4d97b0159356c6f259d5e7e")
+    let estimoteCloudcredentials = CloudCredentials (appID: "tapp-03-o2f", appToken:  "8559dc75a4d97b0159356c6f259d5e7e") //Hentet fra estimote cloud TAPP_03 app
     
     
-    let universalScanner = EBSUniversalScanner()
+    let universalScanner = EBSUniversalScanner() //Muliggøre dataindsamling fra beacon
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +104,7 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
         
         let innerZone = ProximityZone(
             tag: zoneTagV,
-            range: ProximityRange(desiredMeanTriggerDistance: 9.0 ) ?? .far)
+            range: ProximityRange(desiredMeanTriggerDistance: triggerdistance ) ?? .far)
 
         innerZone.onEnter = {zoneContext in
         print("Hot!")
@@ -231,4 +254,9 @@ class FirstViewController: UIViewController, EBSUniversalScannerDelegate {
            }
         
             
+}
+extension FirstViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
 }
